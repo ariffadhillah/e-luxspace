@@ -9,7 +9,7 @@ export default function Sitemap() {
       <div className="border-t border-b border-gray-200 py-12 mt-16 px-4">
         <div className="flex justify-center mb-8">
           <img
-            src="images/content/logo.png"
+            src="/images/content/logo.png"
             alt="Luxspace | Fulfill your house with beautiful furniture"
           />
         </div>
@@ -60,18 +60,18 @@ export default function Sitemap() {
                 </li>
               </ul>
             </div>
-            <div class="px-4 w-full md:w-3/12 mb-4 md:mb-0">
-              <h5 class="text-lg font-semibold mb-2 relative">
+            <div className="px-4 w-full md:w-3/12 mb-4 md:mb-0">
+              <h5 className="text-lg font-semibold mb-2 relative">
                 Special Letter
               </h5>
               <form action="#">
-                <label class="relative w-full">
+                <label className="relative w-full">
                   <input
                     type="text"
-                    class="bg-gray-100 rounded-xl py-3 px-5 w-full focus:outline-none"
+                    className="bg-gray-100 rounded-xl py-3 px-5 w-full focus:outline-none"
                     placeholder="Your email adress"
                   />
-                  <button class="bg-pink-400 absolute rounded-xl right-0 p-3">
+                  <button className="bg-pink-400 absolute rounded-xl right-0 p-3">
                     <svg
                       width="24"
                       height="24"

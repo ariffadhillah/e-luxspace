@@ -42,7 +42,7 @@ export default function JustArrived() {
                   </div>
                 </div>
                 <img
-                  src="images/content/image-arrived-1.png"
+                  src="/images/content/image-arrived-1.png"
                   alt=""
                   className="w-full h-full object-cover object-center"
                 />
@@ -82,7 +82,7 @@ export default function JustArrived() {
                   </div>
                 </div>
                 <img
-                  src="images/content/image-arrived-2.png"
+                  src="/images/content/image-arrived-2.png"
                   alt=""
                   className="w-full h-full object-cover object-center"
                 />
@@ -122,7 +122,7 @@ export default function JustArrived() {
                   </div>
                 </div>
                 <img
-                  src="images/content/image-arrived-3.png"
+                  src="/images/content/image-arrived-3.png"
                   alt=""
                   className="w-full h-full object-cover object-center"
                 />
@@ -162,7 +162,7 @@ export default function JustArrived() {
                   </div>
                 </div>
                 <img
-                  src="images/content/image-arrived-4.png"
+                  src="/images/content/image-arrived-4.png"
                   alt=""
                   className="w-full h-full object-cover object-center"
                 />
@@ -202,7 +202,7 @@ export default function JustArrived() {
                   </div>
                 </div>
                 <img
-                  src="images/content/image-arrived-5.png"
+                  src="/images/content/image-arrived-5.png"
                   alt=""
                   className="w-full h-full object-cover object-center"
                 />
@@ -242,7 +242,7 @@ export default function JustArrived() {
                   </div>
                 </div>
                 <img
-                  src="images/content/image-arrived-3.png"
+                  src="/images/content/image-arrived-3.png"
                   alt=""
                   className="w-full h-full object-cover object-center"
                 />
@@ -281,7 +281,7 @@ export default function JustArrived() {
                   </div>
                 </div>
                 <img
-                  src="images/content/image-arrived-1.png"
+                  src="/images/content/image-arrived-1.png"
                   alt=""
                   className="w-full h-full object-cover object-center"
                 />
