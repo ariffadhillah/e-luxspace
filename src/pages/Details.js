@@ -12,9 +12,6 @@ import ProductsDetails from './Details/ProductsDetails'
 import Suggestion from './Details/Suggestion'
 
 
-
-
-
 export default function HomePage() {
     return (
         <>
