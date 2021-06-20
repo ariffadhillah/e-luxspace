@@ -5,9 +5,13 @@ import Header from 'parts/Header'
 // import JustArrived from 'parts/HomePage/JustArrived'
 import Breadcrumb from 'components/Breadcrumb'
 
-import Clients from 'parts/Clients'
+// import Clients from 'parts/Clients'
 import Sitemap from 'parts/Sitemap'
 import Footer from 'parts/Footer'
+import ProductsDetails from './Details/ProductsDetails'
+import Suggestion from './Details/Suggestion'
+
+
 
 
 
@@ -21,8 +25,9 @@ export default function HomePage() {
                 { url: "/categories/91231", name: " Office Room " },
                 { url: "/categories/91231/products/7888", name: " Details " },
             ]} />
-            
-            <Clients />
+            <ProductsDetails />            
+            <Suggestion />
+            {/* <Clients /> */}
             <Sitemap />
             <Footer />
         </>
