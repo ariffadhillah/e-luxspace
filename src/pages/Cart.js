@@ -7,8 +7,6 @@ import Footer from 'parts/Footer'
 import Sitemap from 'parts/Sitemap'
 import ShoppingCart from 'parts/Cart/ShoppingCart'
 import ShippingDetails from 'parts/Cart/ShippingDetails'
-// import ProductsDetails from './Details/ProductsDetails'
-// import Suggestion from './Details/Suggestion'
 
 
 export default function HomePage() {
@@ -30,6 +28,7 @@ export default function HomePage() {
                 </div>
             </section>
             <Sitemap />
+
             <Footer />
         </>
     )
