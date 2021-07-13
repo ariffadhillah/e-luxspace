@@ -7,10 +7,11 @@ import Cart from "pages/Cart";
 import Congralutions from "pages/Congralutions";
 import NotFound from "pages/NotFound";
 
+import Provider from 'helper/hooks/useGlobalContext'
 
 function App() {
   return (
-    <div className="App">
+    <Provider>
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
@@ -21,7 +22,7 @@ function App() {
           <Route path="*" component={NotFound} />
         </Switch>
       </Router>
-    </div>
+    </Provider>
   );
 }
 
