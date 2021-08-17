@@ -11,7 +11,7 @@ export default function Header({ theme, position }) {
   const {state} = useGlobalContext();
 
   const prevCart = useRef(state?.cart || {})
-
+console.log(state)
   useLayoutEffect(() => {
     if(prevCart.current !== state.cart) {
       prevCart.current = state?.cart || {}

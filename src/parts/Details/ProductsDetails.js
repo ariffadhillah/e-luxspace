@@ -8,7 +8,7 @@ export default function ProductsDetails( {data} ) {
 
   const [slider, setSlider] = React.useState(() => data?.imgUrls?.[0] || "");
 
-  const {state, dispatch} = useGlobalContext()
+  const {dispatch} = useGlobalContext()
   // console.log( dispatch);
 
     return (

@@ -12,8 +12,8 @@ import ProductsDetails from 'parts/Details/ProductsDetails'
 import Suggestion from 'parts/Details/Suggestion'
 
 import useAsync from 'helper/hooks/useAsync'
-
 import fetch from 'helper/fetch';
+
 import { useParams } from 'react-router-dom'
 
 function LoadingProductDetails() {
@@ -112,7 +112,7 @@ export default function HomePage() {
     React.useEffect(() => {
       run(
         fetch({ url: `/api/products/${idp}` }));
-    }, [run]);
+    }, [run, idp]);
     
     return (
         <>
