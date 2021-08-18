@@ -8,9 +8,10 @@ import Breadcrumb from 'components/Breadcrumb'
 
 import Footer from 'parts/Footer'
 import Sitemap from 'parts/Sitemap'
+import Document from 'parts/Document'
 export default function Congralutions() {
     return (
-        <>   
+        <Document>   
         <Header theme="black" />
 
         <Breadcrumb list={[
@@ -36,6 +37,6 @@ export default function Congralutions() {
       <Sitemap />
       <Footer />
             
-        </>
+        </Document>
     );
 }

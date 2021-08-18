@@ -11,7 +11,7 @@ export default function Header({ theme, position }) {
   const {state} = useGlobalContext();
 
   const prevCart = useRef(state?.cart || {})
-console.log(state)
+
   useLayoutEffect(() => {
     if(prevCart.current !== state.cart) {
       prevCart.current = state?.cart || {}
@@ -33,27 +33,26 @@ console.log(state)
             </div>
             <div className="w-full"></div>
             <div className="w-auto">
-              <ul className="fixed bg-white inset-0 flex flex-col invisible items-center justify-center opacity-0 md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center"
-                id="menu">
+              <ul className={["fixed bg-white inset-0 flex flex-col items-center justify-center md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center", toggleMainMenu ? "opacity-100 z-30" : "invisible opacity-0", ].join(" ")}>
                 <li className="mx-3 py-6 md:py-0">
                 <Link to="/showcase" className={[
                   "hover:underline",
                   theme === "white" 
                   ? "text-black md:text-white" 
-                  : "text-white md:text-black", ].join(" ")}>
+                  : "text-black md:text-black", ].join(" ")}>
                 Showcase
                 </Link>
                 </li>
                 <li className="mx-3 py-6 md:py-0">
-                  <Link to="/catalog" className={["hover:underline", theme === "white" ? "text-black md:text-white" : "text-white md:text-black",].join(" ")}
+                  <Link to="/catalog" className={["hover:underline", theme === "white" ? "text-black md:text-white" : "text-black md:text-black",].join(" ")}
                     >Catalog</Link>
                 </li>
                 <li className="mx-3 py-6 md:py-0">
-                  <Link to="/delivery" className={["hover:underline", theme === "white" ? "text-black md:text-white" : "text-white md:text-black",].join(" ")}
+                  <Link to="/delivery" className={["hover:underline", theme === "white" ? "text-black md:text-white" : "text-black md:text-black",].join(" ")}
                     >Delivery</Link>
                 </li>
                 <li className="mx-3 py-6 md:py-0">
-                  <Link to="/rewards" className={["hover:underline", theme === "white" ? "text-black md:text-white" : "text-white md:text-black",].join(" ")}
+                  <Link to="/rewards" className={["hover:underline", theme === "white" ? "text-black md:text-white" : "text-black md:text-black",].join(" ")}
                     >Rewards</Link>
                 </li>
               </ul>
@@ -61,10 +60,7 @@ console.log(state)
             <div className="w-auto">
               <ul className="items-center flex">
                 <li className="ml-6 block md:hidden">
-                  <button
-                    id="menu-toggler"
-                    className="relative flex z-50 items-center justify-center w-8 h-8 text-black md:text-white focus:outline-none"
-                  >
+                  <button className={["flex z-50 items-center justify-center w-8 h-8 text-black md:text-white focus:outline-none", toggleMainMenu ? "fixed top-0 right-0" : "relative", theme === "white" ? "text-black md:text-white" : "text-black md:text-black" ].join(" ")} onClick={() => setToggleMainMenu((prev) => !prev)} >
                     <svg
                       className="fill-current"
                       width="18"

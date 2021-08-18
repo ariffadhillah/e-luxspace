@@ -15,6 +15,8 @@ import useAsync from 'helper/hooks/useAsync'
 import fetch from 'helper/fetch';
 
 import { useParams } from 'react-router-dom'
+import Document from 'parts/Document'
+import PageErrorMassage from 'parts/PageErrorMassage'
 
 function LoadingProductDetails() {
     return <section className="container mx-auto">
@@ -105,9 +107,10 @@ function LoadingSuggestion() {
 
 
 export default function HomePage() {
+
     const { idp } = useParams();
     
-    const { data, run, isLoading } = useAsync();
+    const { data, error, run, isLoading, isError } = useAsync();
 
     React.useEffect(() => {
       run(
@@ -115,7 +118,7 @@ export default function HomePage() {
     }, [run, idp]);
     
     return (
-        <>
+        <Document>
             <Header theme="black" />
 
             <Breadcrumb list={[
@@ -123,15 +126,27 @@ export default function HomePage() {
                 { url: "/categories/91231", name: " Office Room " },
                 { url: "/categories/91231/products/7888", name: " Details " },
             ]} />
-            {
-                
-                isLoading ? <LoadingProductDetails /> : <ProductsDetails data={data} />            
-            }
-            {
-                isLoading ? <LoadingSuggestion /> : <Suggestion data={data?.relatedProducts || {}} />
-            }
+             {isError ? (
+        <PageErrorMassage
+          title="Product Not Found"
+          body={error.errors.message}
+        />
+      ) : (
+        <>
+          {isLoading ? (
+            <LoadingProductDetails />
+          ) : (
+            <ProductsDetails data={data} />
+          )}
+          {isLoading ? (
+            <LoadingSuggestion />
+          ) : (
+            <Suggestion data={data?.relatedProducts || {}} />
+          )}
+        </>
+      )}
             <Sitemap />
             <Footer />
-        </>
+        </Document>
     )
 }
