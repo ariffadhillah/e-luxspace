@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import useAsync from 'helper/hooks/useAsync'
 
 import fetch from 'helper/fetch';
-
+import 'helper/format/thousand'
 function Loading({ ratio = {} }) {
   const dummy = [
     {
@@ -93,14 +93,15 @@ export default function BrowseRoom() {
           <div className="grid grid-rows-2 grid-cols-9 gap-4">
             {
               isLoading ? <Loading ratio={ratioClassNames}/> : data.data.map( (item, index) =>{
-                console.log(data)
+                // console.log(data)
                 return <div key={ item.id } className={`relative card ${ ratioClassNames?.wrapper.default?.[item.ratio.default] } ${ ratioClassNames?.wrapper.md?.[item.ratio.md] }`} style={{ height: index === 0 ? 180 : "auto" }}>
                 <div className="card-shadow rounded-xl">
                 <img src={`/images/content/${item.imageUrl}`} alt={item.title} className="w-full h-full object-cover object-center overlay overflow-hidden rounded-xl" />
                 </div>
                 <div className={`overlay ${ ratioClassNames?.meta?.[item.ratio.md]}`}>
                 <h5 className="text-lg font-semibold">{item.title}</h5>
-                  <span className="">{item.products} items</span>
+                  <span className="">{item.products.thousand()} item{item.products > 1 ? "s" : "" }</span>
+                  {/* <span className="">{item.products.thousand()} item{item.products > 1 ? "s" : ""}</span> */}
                 </div>
               </div> 
               } )

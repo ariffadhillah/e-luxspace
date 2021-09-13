@@ -5,7 +5,7 @@ import fetch from 'helper/fetch';
 
 import { Link } from 'react-router-dom'
 import Carousel from 'components/Carousel';
-
+import 'helper/format/currency'
 
 
 function Loading() {
@@ -82,7 +82,7 @@ export default function JustArrived() {
                         <img src={item.imageUrl} alt="" className="w-full h-full object-cover object-center" />
                       </div>
                       <h5 className="text-lg font-semibold mt-4">Cangkir Mauttie</h5>
-                      <span className="">IDR {item.price} </span>
+                      <span className="">{item.price.currency()}</span>
                       <Link to={`/categories/${item.idc}/products/${item.id}`} className="stretched-link">
                       </Link>
                     </div>

@@ -3,6 +3,7 @@ import ReactHtmlParser from "react-html-parser";
 
 
 import { useGlobalContext } from "helper/hooks/useGlobalContext";
+import 'helper/format/currency'
 
 export default function ProductsDetails( {data} ) {
 
@@ -46,7 +47,7 @@ export default function ProductsDetails( {data} ) {
           </div>
           <div className="flex-1 px-4 md:p-6">
             <h2 className="text-5xl font-semibold">{data.title}</h2>
-            <p className="text-xl">IDR {data.price}</p>
+            <p className="text-xl">{data.price.currency()}</p>
   
             <button
               className="transition-all duration-200 bg-pink-400 text-black focus:bg-black focus:text-pink-400 rounded-full px-8 py-3 mt-4 inline-flex" onClick={ () => dispatch({type: "ADD_TO_CART", item: data}) } ><svg
